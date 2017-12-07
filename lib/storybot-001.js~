@@ -1,0 +1,12 @@
+var tracery = require('tracery-grammar');
+
+var grammar = tracery.createGrammar({
+   'category-a': 'ocean desert sea'.split(' ').push('land bridge'),
+   'category-b': 'castle mountain forest tree'.split(' '),
+   'person': ''.split(' ')
+   'origin':['#person# traveled over #category-a# to get to the #category-b#.'],
+ });
+
+grammar.addModifiers(tracery.baseEngModifiers);
+
+console.log(grammar.flatten('#origin#'));
